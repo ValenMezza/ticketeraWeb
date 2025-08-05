@@ -1,0 +1,67 @@
+@import "../variables/-variables";
+
+header {
+    background-color: $backColor;
+    display: block;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    border-bottom: solid 1px $borderColor;
+    margin-bottom: 1vh;
+    & nav {
+        display: flex;
+        flex-direction: row;
+        margin-right: 20px;
+        justify-content: end;
+        margin-top: 10px;
+        align-items: baseline;
+
+        & #search {
+            padding: 5px;
+            border-radius: 5px;
+            border: solid 1px $borderColor;
+            width: 20vw;
+            height: 3vh;
+            align-items: end;
+        }
+
+        & ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: end;
+
+
+            & li {
+                margin: 0 15px;
+                cursor: pointer;
+                color: #252525;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: $btnHoverColor;
+                }
+            }
+        }
+
+        & button {
+            // estilos del botón
+            background-color: $btnColor;
+            color: white;
+            border: solid black 1px;
+            padding: 10px 20px;
+            margin: 1%;
+            border-radius: 5px;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+    }
+}

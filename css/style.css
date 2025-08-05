@@ -1,0 +1,142 @@
+header {
+  background-color: white;
+  display: block;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  border-bottom: solid 1px black;
+  margin-bottom: 1vh;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+  justify-content: end;
+  margin-top: 10px;
+  align-items: baseline;
+}
+header nav #search {
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px black;
+  width: 20vw;
+  height: 3vh;
+  align-items: end;
+}
+header nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: end;
+}
+header nav ul li {
+  margin: 0 15px;
+  cursor: pointer;
+  color: #252525;
+}
+header nav ul li:hover {
+  text-decoration: underline;
+  color: rgb(77, 75, 75);
+}
+header nav button {
+  background-color: rgb(97, 95, 95);
+  color: white;
+  border: solid black 1px;
+  padding: 10px 20px;
+  margin: 1%;
+  border-radius: 5px;
+}
+header nav button a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+main p {
+  color: white;
+  font-size: 16px;
+}
+main section {
+  width: 75%;
+}
+main section .cardTicket {
+  align-items: start;
+  list-style: none;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 2px black;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+main section .cardTicket h3 {
+  color: black;
+  font-size: 16px;
+}
+main section .cardTicket p {
+  color: black;
+  font-size: 16px;
+}
+main aside {
+  width: 20%;
+  background-color: rgb(214, 213, 212);
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 2px black;
+  margin-left: 3%;
+}
+main aside h4 {
+  color: black;
+  font-size: 16px;
+}
+main aside ul {
+  list-style: none;
+  padding: 0;
+}
+main aside ul li {
+  color: black;
+  font-size: 16px;
+  margin: 5px 0;
+}
+main #createTkt {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+main #createTkt h2 {
+  text-align: center;
+}
+main #createTkt form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+main #createTkt label {
+  display: flex;
+  width: fit-content;
+  margin: 10px 0;
+  color: black;
+  font-size: 16px;
+}
+main #createTkt input {
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px black;
+  width: 100%;
+  height: 3vh;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}

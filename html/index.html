@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to My Pagee</h1>
+        <nav>
+            
+            <input type="text" name="" id="search" placeholder="Buscar..." />
+            <ul>
+                <li>Último</li>
+                <li>Prioridad: Alta - Baja</li>
+                <li id="listid">Prioridad: Baja - Alta</li>
+            </ul>
+            
+            <button id="headerBtn"><a href="index.html">Inicio</a></button>
+            <button class="headerBtn"><a href="./create.html">Crear nuevo ticket</a></button>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Peticiones actuales: <i>NUMEROoo
+            
+            </i></h2>
+            <ul id="ticketList">
+                <li class="cardTicket">
+                    <div>
+                        <h3><a href="">Petición 1</a></h3>
+                        <h4>Asignado: Administrador</h4>
+                        <h4>Autor: Usuario</h4>
+                        <h4>Fecha: 2023-10-01</h4>
+                        </h4>
+                        <p>Descripción de la petición 1</p>
+                    </div>
+                </li>
+                                <li class="cardTicket">
+                    <div>
+                        <h3><a href="">Petición 1</a></h3>
+                        <h4>Asignado: Administrador</h4>
+                        <h4>Autor: Usuario</h4>
+                        <h4>Fecha: 2023-10-01</h4>
+                        </h4>
+                        <p>Descripción de la petición 1</p>
+                    </div>
+                </li>
+                
+            </ul>
+        </section>
+        <aside>
+            <h4>Filtros:</h4>
+            <button>Limpiar filtros</button>
+            <ul>
+                <li><input type="checkbox" name="" id="alta">Prioridad: Alta</li>
+                <li><input type="checkbox" name="" id="media">Prioridad: Media</li>
+                <li><input type="checkbox" name="" id="baja">Prioridad: Baja</li>
+                <li><input type="checkbox" name="" id="abierto">Estado: Abierto</li>
+                <li><input type="checkbox" name="" id="cerrado">Estado: Cerrado</li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Website</p>
+    </footer>
+</body>
+
+</html>
