@@ -12,35 +12,58 @@
     <header>
         <h1>Welcome to My Pagee</h1>
         <nav>
-            
+
             <input type="text" name="" id="search" placeholder="Buscar..." />
             <ul>
                 <li>Último</li>
                 <li>Prioridad: Alta - Baja</li>
                 <li>Prioridad: Baja - Alta</li>
             </ul>
-            <button class="btnTest"><a href="./index.html">Inicio</a></button>
+            <a href="./index.html"><button class="btnTest">Inicio</button></a>
 
-            <button><a href="./create.html">Crear nuevo ticket</a></button>
+            <a href="./create.html"><button>Crear </button></a>
         </nav>
     </header>
     <main id="tktMain">
         <section id="createTkt"">
-
             <h2>Crear nuevo ticket</h2>
-            <form action="submit_ticket.php" method="post">
+            <form action=" submit_ticket.php" method="post">
+            <div id="formDivLeft">
                 <label for="title">Título:</label>
                 <input type="text" id="title" name="title" required>
                 <br>
                 <label for="description">Descripción:</label>
                 <textarea id="description" name="description" required></textarea>
                 <br>
-                <button type="submit">Crear Ticket</button>
+            </div>
+            <div id="formDivRight">
+                <label for="title">Prioridad:</label>
+                <select name="Prioridad" id="Prioridad" required>
+                    <option value="" disabled selected hidden></option>
+                    <option value="baja">Baja</option>
+                    <option value="baja">Media</option>
+                    <option value="baja">Alta</option>
+                </select>
+                <br>
+                <label for="title">Asignado a:</label>
+                <select name="Asignado" id="asignacion" required>
+                    <option value="" disabled selected hidden></option>
+                    <option value="baja">Valentino Mezzavilla</option>
+                    <option value="baja">Usuario 1</option>
+                    <option value="baja">Usuario 2</option>
+                </select>
+                <br>
+                <input type="file" name="file" id="fileUpdate" accept=".jpg, .jpeg, .png, .pdf">
+            </div>
             </form>
+            <button type="submit">Crear Ticket</button>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Ticketera Web</p>
     </footer>
+    <script type="module" src="../js/index.js"></script>
+
 </body>
+
 </html>
