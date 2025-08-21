@@ -38,11 +38,11 @@
             </div>
             <div id="formDivRight">
                 <label for="title">Prioridad:</label>
-                <select name="Prioridad" id="Prioridad" required>
+                <select name="Prioridad" id="prioridad" required>
                     <option value="" disabled selected hidden></option>
                     <option value="baja">Baja</option>
-                    <option value="baja">Media</option>
-                    <option value="baja">Alta</option>
+                    <option value="media">Media</option>
+                    <option value="alta">Alta</option>
                 </select>
                 <br>
                 <label for="title">Asignado a:</label>
@@ -56,7 +56,7 @@
                 <input type="file" name="file" id="fileUpdate" accept=".jpg, .jpeg, .png, .pdf">
             </div>
             </form>
-            <button type="submit">Crear Ticket</button>
+            <button id="createBtn" type="button">Crear Ticket</button>
         </section>
     </main>
     <footer>

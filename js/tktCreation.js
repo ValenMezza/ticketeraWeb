@@ -1,13 +1,44 @@
-export function createTicket() {
-    console.log("VALENTINO");
-    const title = document.getElementById("title").value;
-    const description = document.getElementById("description").value;
-    const priority = document.getElementById("Prioridad").value;
+const tickets = JSON.parse(localStorage.getItem("tickets")) || [];
 
-    if (title && description) {
-        console.log(`Ticket created with title: ${title}, description: ${description}, priority: ${priority}`);
-        // Here you would typically send the data to a server
-    } else {
-        console.error("Title and description are required to create a ticket.");
+export function createTicket() {
+    const btnCreate = document.getElementById("createBtn");
+    if (!btnCreate) {
+        console.error("No se encontró el botón #createTkt");
+        return;
     }
+
+    // Aquí SOLO escuchamos el click del botón
+    btnCreate.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // Obtengo los valores *en el momento del click*
+        const title = document.getElementById("title").value.trim();
+        const description = document.getElementById("description").value.trim();
+        const priority = document.getElementById("prioridad").value.trim();
+        const assignment = document.getElementById("asignacion").value.trim();
+
+        // Valido aquí si están vacíos *solo después de click*
+        if (!title || !description || !priority || !assignment) {
+            console.log("Por favor, completa todos los campos.");
+            return;
+        }
+
+        // Si están completos, creo el ticket
+        const nuevoTkt = {
+            title,
+            description,
+            priority,
+            assignment,
+            date: new Date().toLocaleDateString(),
+            hora: new Date().toLocaleTimeString(),
+            estado: "abierto",
+        };
+
+        tickets.push(nuevoTkt);
+        console.log("Tickets acumulados:", tickets);
+        localStorage.setItem("tickets", JSON.stringify(tickets));
+        console.log(tickets)
+        // Opcional: limpiar formulario después de agregar
+        // document.querySelector("form").reset();
+    });
 }

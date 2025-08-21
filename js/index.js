@@ -1,4 +1,6 @@
-console.log("hola mundoaaasss");
-
+// index.js
 import { createTicket } from "./tktCreation.js";
-createTicket()
+
+document.addEventListener("DOMContentLoaded", () => {
+    createTicket();
+});
