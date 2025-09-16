@@ -1,0 +1,177 @@
+header {
+  background-color: rgb(255, 255, 255);
+  display: block;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  border-bottom: solid 1px black;
+  margin-bottom: 1vh;
+  font-size: 1rem;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+  justify-content: end;
+  margin-top: 10px;
+  align-items: baseline;
+}
+header nav #search {
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px black;
+  width: 20vw;
+  height: 3vh;
+  align-items: end;
+}
+header nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: end;
+}
+header nav ul li {
+  margin: 0 15px;
+  cursor: pointer;
+  color: #252525;
+}
+header nav ul li:hover {
+  text-decoration: underline;
+  color: rgb(77, 75, 75);
+}
+header nav .btnNav {
+  background-color: rgb(196, 196, 196);
+  color: white;
+  border: solid black 1px;
+  padding: 10px 20px;
+  margin: 1%;
+  border-radius: 5px;
+  width: 8vw;
+  min-width: fit-content;
+  margin: 0.5vw;
+  cursor: pointer;
+}
+
+main {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+}
+main p {
+  color: white;
+  font-size: 16px;
+}
+main section {
+  width: 80%;
+}
+main section .cardTicket {
+  align-items: start;
+  list-style: none;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 2px black;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+main section .cardTicket h3 {
+  color: black;
+  font-size: 16px;
+}
+main section .cardTicket p {
+  color: black;
+  font-size: 16px;
+}
+main aside {
+  width: 20%;
+  background-color: rgb(214, 213, 212);
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 2px black;
+  margin-left: 3%;
+}
+main aside h4 {
+  color: black;
+  font-size: 16px;
+}
+main aside ul {
+  list-style: none;
+  padding: 0;
+}
+main aside ul li {
+  color: black;
+  font-size: 16px;
+  margin: 5px 0;
+}
+main #createTkt {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+main #createTkt h2 {
+  text-align: center;
+}
+main #createTkt form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  align-items: baseline;
+}
+main #createTkt form label {
+  font-weight: bold;
+}
+main #createTkt form #formDivLeft,
+main #createTkt form #formDivRight {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0.5vw;
+}
+main #createTkt form #formDivLeft input, main #createTkt form #formDivLeft select, main #createTkt form #formDivLeft textarea,
+main #createTkt form #formDivRight input,
+main #createTkt form #formDivRight select,
+main #createTkt form #formDivRight textarea {
+  width: 90%;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px black;
+  margin-bottom: 10px;
+  resize: none;
+}
+main #createTkt form #formDivLeft #fileUpdate,
+main #createTkt form #formDivRight #fileUpdate {
+  color: white;
+  background-color: rgb(196, 196, 196);
+  cursor: pointer;
+  width: 25vw;
+  background-color: rgb(196, 196, 196);
+}
+main #createTkt button {
+  color: white;
+  width: 20%;
+  height: 2.5vh;
+  margin: auto;
+  margin-bottom: 1vh;
+  background-color: rgb(196, 196, 196);
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+/*# sourceMappingURL=style.css.map */

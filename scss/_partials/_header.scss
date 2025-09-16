@@ -1,4 +1,4 @@
-@import "../variables/-variables";
+@use "../variables" as *;
 
 header {
     background-color: $backColor;
@@ -10,6 +10,7 @@ header {
     border-bottom: solid 1px $borderColor;
     margin-bottom: 1vh;
     font-size: 1rem;
+
     & nav {
         display: flex;
         flex-direction: row;
@@ -46,7 +47,8 @@ header {
             }
         }
 
-        & a button {
+
+        & .btnNav{
             // estilos del botón
             background-color: $btnColor;
             color: white;

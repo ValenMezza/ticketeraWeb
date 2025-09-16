@@ -1,5 +1,5 @@
 header {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   display: block;
   justify-content: center;
   width: 100%;
@@ -40,8 +40,8 @@ header nav ul li:hover {
   text-decoration: underline;
   color: rgb(77, 75, 75);
 }
-header nav a button {
-  background-color: rgb(97, 95, 95);
+header nav .btnNav {
+  background-color: rgb(196, 196, 196);
   color: white;
   border: solid black 1px;
   padding: 10px 20px;
@@ -54,7 +54,7 @@ header nav a button {
 }
 
 main {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: row;
 }
@@ -150,10 +150,10 @@ main #createTkt form #formDivRight textarea {
 main #createTkt form #formDivLeft #fileUpdate,
 main #createTkt form #formDivRight #fileUpdate {
   color: white;
-  background-color: rgb(97, 95, 95);
+  background-color: rgb(196, 196, 196);
   cursor: pointer;
   width: 25vw;
-  background-color: rgb(97, 95, 95);
+  background-color: rgb(196, 196, 196);
 }
 main #createTkt button {
   color: white;
@@ -161,7 +161,7 @@ main #createTkt button {
   height: 2.5vh;
   margin: auto;
   margin-bottom: 1vh;
-  background-color: rgb(97, 95, 95);
+  background-color: rgb(196, 196, 196);
   border: 2px solid black;
   border-radius: 5px;
   cursor: pointer;
@@ -171,4 +171,5 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   overflow-x: hidden;
+  background-color: rgb(255, 255, 255);
 }

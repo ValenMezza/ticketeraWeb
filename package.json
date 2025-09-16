@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "concurrently \"nodemon app.js\" \"sass --watch scss:public/css\"",
+    "sass": "sass --watch scss/style.scss html/css/style.css",
+    "all": "concurrently \"npm run dev\" \"npm run sass\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,7 +15,9 @@
   "dependencies": {
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
   },
   "repository": {
     "type": "git",
@@ -21,5 +27,9 @@
     "url": "https://github.com/ValenMezza/ticketeraWeb/issues"
   },
   "homepage": "https://github.com/ValenMezza/ticketeraWeb#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.10"
+  }
 }

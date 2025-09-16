@@ -1,0 +1,31 @@
+<form action="/create/newTicket" method="post">
+    <div id="formDivLeft">
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="description">Descripción:</label>
+        <textarea id="description" name="description" required></textarea>
+        <br>
+    </div>
+    <div id="formDivRight">
+        <label for="title">Prioridad:</label>
+        <select name="Prioridad" id="prioridad" required>
+            <option value="" disabled selected hidden></option>
+            <option value="baja">Baja</option>
+            <option value="media">Media</option>
+            <option value="alta">Alta</option>
+        </select>
+        <br>
+        <label for="title">Asignado:</label>
+        <select name="Asignado" id="asignacion" required>
+            <option value="" disabled selected hidden></option>
+            <option value="baja">Valentino Mezzavilla</option>
+            <option value="baja">Usuario 1</option>
+            <option value="baja">Usuario 2</option>
+        </select>
+        <br>
+        <input type="file" name="file" id="fileUpdate" accept=".jpg, .jpeg, .png, .pdf">
+    <button id="createBtn" type="submit">Crear Ticket</button>
+    
+    </div>
+</form>

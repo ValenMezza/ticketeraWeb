@@ -1,6 +1,9 @@
-@import "../_partials/main";
+@use "../_partials/main" as *;
+@use "../variables" as *;
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     overflow-x: hidden;
+    background-color: $backColor;
+
 }
