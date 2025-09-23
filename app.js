@@ -1,26 +1,7 @@
-
-// const express = require('express');
-// const path = require('path');
-
-// const app = express();
-// const PORT = 3000;
-
-// // Servir toda la carpeta html como estática
-// app.use(express.static(path.join(__dirname, 'html')));
-
-// // Ruta principal que envía index.html
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'html', 'index.html'))   ;
-// });
-
-// // Iniciar servidoraaa
-// app.listen(PORT, () => {
-//     console.log(`Servidor corriendo en http://localhost:${PORT}`);
-// });
-
-
 const express = require('express');
 const path = require('path');
+const ticketController = require('./controller/ticket/ticketController');
+const pool = require('./db');
 
 const app = express();
 const PORT = 8000;
@@ -29,21 +10,28 @@ const PORT = 8000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Servir archivos estáticos (css, js, imágenes)
+// Middleware para parsear body (formularios y JSON)
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Servir archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Ruta principal -> renderiza index.ejs
-app.get('/', (req, res) => {
-    res.render('index', { titulo: 'Bienvenido a mi App con EJS' });
-});
-
-// Ejemplo de otra vista
+// Rutas
+app.get('/', ticketController.index);
 app.get('/contacto', (req, res) => {
     res.render('contacto', { titulo: 'Página de Contacto' });
 });
-app.get('/ticket/create', (req,res)=>{
-    res.render('create', { titulo: 'Crear nuevo elemento' });
+
+//creacion de tickets
+app.get('/ticket/create', ticketController.create);
+app.post('/newTicket', ticketController.store);
+
+//configuracion
+app.get('/configuration', (req, res) => {
+    res.render('configuration', { titulo: 'Página de Configuración' });
 });
+
 // Iniciar servidor
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);

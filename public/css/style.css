@@ -17,6 +17,10 @@ header nav {
   margin-top: 10px;
   align-items: baseline;
 }
+header nav a {
+  color: #252525;
+  text-decoration: none;
+}
 header nav #search {
   padding: 5px;
   border-radius: 5px;

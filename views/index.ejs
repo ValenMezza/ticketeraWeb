@@ -10,37 +10,25 @@
 
 <body>
     <header>
-        <h1>Welcome to My Pagee</h1>
         <%- include('./_partials/navBar') %>
-
     </header>
     <main>
         <section>
-            <h2>Peticiones actuales: <i>NUMERO
-
-                </i></h2>
-            <ul id="ticketList">
-                <li class="cardTicket">
-                    <div>
-                        <h3><a href="">Petición 1</a></h3>
-                        <h4>Asignado: Administrador</h4>
-                        <h4>Autor: Usuario</h4>
-                        <h4>Fecha: 2023-10-01</h4>
-                        </h4>
-                        <p>Descripción de la petición 1</p>
-                    </div>
-                </li>
-                <li class="cardTicket">
-                    <div>
-                        <h3><a href="">Petición 1</a></h3>
-                        <h4>Asignado: Administrador</h4>
-                        <h4>Autor: Usuario</h4>
-                        <h4>Fecha: 2023-10-01</h4>
-                        </h4>
-                        <p>Descripción de la petición 1</p>
-                    </div>
-                </li>
-
+            <h2>Listado de Tickets</h2>
+            <ul>
+                <% if (tickets && tickets.length> 0) { %>
+                    <% tickets.forEach(ticket=> { %>
+                        <li>
+                            <strong>ID:</strong> <%= ticket.id_ticket %> -
+                            <strong>
+                                <%= ticket.asunto %>
+                            </strong> -
+                            <%= ticket.descripcion %> -
+                        </li>
+                        <% }) %>
+                            <% } else { %>
+                                <li>No hay tickets todavía</li>
+                                <% } %>
             </ul>
         </section>
         <aside>
@@ -64,7 +52,7 @@
 
 </html>
 
-        <!--         
+<!--         
         <nav>
 
             <input type="text" name="" id="search" placeholder="Buscar..." />
