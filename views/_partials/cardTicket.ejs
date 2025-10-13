@@ -1,0 +1,58 @@
+<section>
+    <ul>
+        <% if (tickets && tickets.length> 0) { %>
+            <% tickets.forEach(ticket=> { %>
+                <li class="cardTicket<%= ticket.prioridad.toLowerCase() %>">
+
+                    <div class="tktHead">
+                        <div class="tktTitle">
+                            <strong>
+                                <h3>
+                                    #<%= ticket.id_ticket %> | <%= ticket.asunto.charAt(0).toUpperCase() +
+                                            ticket.asunto.slice(1) %>
+                                </h3>
+                            </strong>
+                        </div>
+                        <div class="tktInfo">
+                            <h5>Prioridad: <%= ticket.prioridad.charAt(0).toUpperCase() + ticket.prioridad.slice(1) %>
+                            </h5>
+                            <h5> Estado: <%=ticket.estado.charAt(0).toUpperCase() + ticket.estado.slice(1) %>
+                                    <h5> Fecha de creación: <%= new Date(ticket.fecha_creacion).toLocaleString() %>
+                                    </h5>
+                                    <p>
+                        </div>
+                    </div>
+                    <div class="tktDesc">
+                        <p><strong>Descripción: </strong>
+                            <%= ticket.descripcion %>
+                        </p>
+                    </div>
+                    <div class="tktDetail">
+                        <a class="detailBtn" href="/ticket/<%= ticket.id_ticket %>"><button>Ver detalle</button></a>
+                    </div>
+
+
+                    </p>
+                </li>
+                <% }) %>
+                    <% } else { %>
+                        <li>No hay tickets todavía</li>
+                        <% } %>
+    </ul>
+
+    <div class="pagination">
+        <% if (currentPage> 1) { %>
+            <a href="/?page=<%= currentPage - 1 %>">Anterior</a>
+            <% } %>
+
+                <% for (let i=1; i <=totalPages; i++) { %>
+                    <a href="/?page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %>">
+                        <%= i %>
+                    </a>
+                    <% } %>
+
+                        <% if (currentPage < totalPages) { %>
+                            <a href="/?page=<%= currentPage + 1+" -" %>">Siguiente</a>
+                            <% } %>
+    </div>
+</section>

@@ -13,24 +13,7 @@
         <%- include('./_partials/navBar') %>
     </header>
     <main>
-        <section>
-            <h2>Listado de Tickets</h2>
-            <ul>
-                <% if (tickets && tickets.length> 0) { %>
-                    <% tickets.forEach(ticket=> { %>
-                        <li>
-                            <strong>ID:</strong> <%= ticket.id_ticket %> -
-                            <strong>
-                                <%= ticket.asunto %>
-                            </strong> -
-                            <%= ticket.descripcion %> -
-                        </li>
-                        <% }) %>
-                            <% } else { %>
-                                <li>No hay tickets todavía</li>
-                                <% } %>
-            </ul>
-        </section>
+        <%- include('./_partials/cardTicket') %>
         <aside>
             <h4>Filtros:</h4>
             <button>Limpiar filtros</button>
@@ -52,16 +35,3 @@
 
 </html>
 
-<!--         
-        <nav>
-
-            <input type="text" name="" id="search" placeholder="Buscar..." />
-            <ul>
-                <li>Último</li>
-                <li>Prioridad: Alta - Baja</li>
-                <li id="listid">Prioridad: Baja - Alta</li>
-            </ul>
-
-            <a href='index'><button id="headerBtn">Inicio</button></a>
-            <a href="./create.html"><button class="headerBtn">Crear</button></a>
-        </nav> -->

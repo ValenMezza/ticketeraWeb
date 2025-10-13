@@ -1,83 +1,90 @@
-// const pool = require('../../db');
-
-// const ticketController = {
-//     // Listado de tickets
-//     index: async (req, res) => {
-//         try {
-//             const result = await pool.query('SELECT * FROM tickets ORDER BY fecha_creacion DESC');
-//             res.render('index', {
-//                 titulo: 'Bienvenido a mi App con EJS',
-//                 tickets: result.rows
-//             });
-//         } catch (error) {
-//             console.error(error);
-//             res.status(500).send('Error obteniendo tickets');
-//         }
-//     },
-
-//     // Mostrar formulario
-//     create: (req, res) => {
-//         res.render('create', { titulo: 'Crear nuevo Ticket' });
-//     },
-
-//     // Guardar en la DB
-//     store: async (req, res) => {
-//         const { asunto, descripcion, id_proyecto, id_creador, id_asignado } = req.body;
-
-//         try {
-//             await pool.query(
-//                 `INSERT INTO tickets (asunto, descripcion, id_proyecto, id_creador, id_asignado)
-//                  VALUES ($1, $2, $3, $4, $5)`,
-//                 [asunto, descripcion, id_proyecto, id_creador, id_asignado || null]
-//             );
-
-//             res.redirect('/');
-//         } catch (error) {
-//             console.error(error);
-//             res.status(500).send('Error guardando ticket');
-//         }
-//     }
-// };
-
-// module.exports = ticketController;
-
-
 const pool = require('../../db');
 
 const ticketController = {
+
     index: async (req, res) => {
         try {
-            const result = await pool.query('SELECT * FROM pruebatickets');
-            res.render('index', { titulo: 'Bienvenido a mi App con EJS', tickets: result.rows });
-            console.log(result.rows);
+            const page = parseInt(req.query.page) || 1;
+            const limit = 10;
+            const offset = (page - 1) * limit;
+
+            const result = await pool.query(
+                'SELECT * FROM tickets ORDER BY id_ticket DESC LIMIT $1 OFFSET $2',
+                [limit, offset]
+            );
+
+            const totalResult = await pool.query('SELECT COUNT(*) FROM tickets');
+            const totalTickets = parseInt(totalResult.rows[0].count);
+            const totalPages = Math.ceil(totalTickets / limit);
+
+
+
+            res.render('index', {
+                titulo: 'Bienvenido a mi App con EJS',
+                tickets: result.rows,      // 👈 solo 10 tickets
+                currentPage: page,
+                totalPages: totalPages
+            });
         } catch (err) {
             console.error("Error al obtener tickets:", err);
             res.status(500).send("Error al obtener tickets");
         }
     },
 
+
     create: (req, res) => {
         res.render('create', { titulo: 'Crear nuevo Ticket' });
     },
 
-store: async (req, res) => {
-    console.log("Datos recibidos del formulario:", req.body);
+    store: async (req, res) => {
+        console.log("Datos recibidos del formulario:", req.body);
 
-    try {
-        const { asunto, descripcion } = req.body;
+        try {
+            const { asunto, descripcion, estado, prioridad } = req.body;
 
-        await pool.query(
-            `INSERT INTO pruebatickets (asunto, descripcion) VALUES ($1, $2)`,
-            [asunto, descripcion]
-        );
+            await pool.query(
+                `INSERT INTO tickets (asunto, descripcion, estado, prioridad) VALUES ($1, $2, $3, $4)`,
+                [asunto, descripcion, estado, prioridad]
+            );
 
-        console.log("Ticket guardado correctamente");
-        res.redirect('/');
-    } catch (err) {
-        console.error("Error al guardar ticket:", err);
-        res.status(500).send("Error al guardar ticket");
+            console.log("Ticket guardado correctamente");
+            res.redirect('/');
+        } catch (err) {
+            console.error("Error al guardar ticket:", err);
+            res.status(500).send("Error al guardar ticket");
+        }
+    },
+    show: async (req, res) => {
+        try {
+            const { id } = req.params;
+
+            // Validación básica
+            const idNum = Number(id);
+            if (!Number.isInteger(idNum) || idNum <= 0) {
+                return res.status(400).send('ID de ticket inválido');
+            }
+
+            const result = await pool.query(
+                'SELECT * FROM tickets WHERE id_ticket = $1 LIMIT 1',
+                [idNum]
+            );
+
+            if (result.rows.length === 0) {
+                return res.status(404).render('404', { titulo: 'Ticket no encontrado' });
+            }
+
+            const ticket = result.rows[0];
+
+            // Renderiza la nueva vista de detalle
+            res.render('ticket', {
+                titulo: `Ticket #${ticket.id_ticket}`,
+                ticket
+            });
+        } catch (err) {
+            console.error('Error al obtener detalle del ticket:', err);
+            res.status(500).send('Error al obtener el detalle del ticket');
+        }
     }
-}
 };
 
 module.exports = ticketController;

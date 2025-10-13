@@ -6,15 +6,104 @@ main {
     flex-direction: row;
 
     & p {
-        color: white;
+        color: rgb(0, 0, 0);
         font-size: 16px;
     }
 
     & section {
         width: 80%;
 
-        .cardTicket {
+        & .tktHead {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid black;
+        }
+
+        & .tktTitle {
+            justify-content: start;
             align-items: start;
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: baseline;
+        }
+
+        & .tktInfo {
+            max-width: fit-content;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: baseline;
+
+
+            & h5 {
+                margin: 1vw;
+            }
+        }
+
+        & .tktDesc {
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid black;
+
+            & p {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        & .tktDetail {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            & button {
+                background-color: $btnColor;
+                color: white;
+                border: solid black 1px;
+                padding: 10px 20px;
+                margin: 1%;
+                border-radius: 5px;
+                width: 8vw;
+                min-width: fit-content;
+                margin: 0.5vw;
+                cursor: pointer;
+            }
+
+            // & .detailBtn {
+            //     // estilos del botón
+            //     background-color: $btnColor;
+            //     color: white;
+            //     border: solid black 1px;
+            //     padding: 10px 20px;
+            //     margin: 1%;
+            //     border-radius: 5px;
+            //     width: 8vw;
+            //     min-width: fit-content;
+            //     margin: 0.5vw;
+            //     cursor: pointer; 
+            //     & a{ text-decoration: none; color: rgb(233, 0, 0);}
+            // }}
+        }
+
+
+        & h3 {
+            color: $fontColor;
+            font-size: $fontSize;
+        }
+
+        & p {
+            color: $fontColor;
+            font-size: $fontSize;
+        }
+
+
+
+        .cardTicketalta {
+            width: 100%;
             list-style: none;
             background-color: $cardColor;
             padding: 10px;
@@ -22,19 +111,47 @@ main {
             border: solid 2px $borderColor;
             margin-top: 2%;
             margin-bottom: 2%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            box-shadow: 0 4px 8px 0 $shadowColor, 0 6px 20px 0 $shadowColor;
+            background: $prioridadAlta;
 
-
-
-            & h3 {
-                color: $fontColor;
-                font-size: $fontSize;
-            }
-
-            & p {
-                color: $fontColor;
-                font-size: $fontSize;
-            }
         }
+
+        .cardTicketmedia {
+            width: 100%;
+            list-style: none;
+            background-color: $cardColor;
+            padding: 10px;
+            border-radius: 5px;
+            border: solid 2px $borderColor;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            box-shadow: 0 4px 8px 0 $shadowColor, 0 6px 20px 0 $shadowColor;
+            background: $prioridadMedia;
+
+        }
+
+        .cardTicketbaja {
+            width: 100%;
+            list-style: none;
+            background-color: $cardColor;
+            padding: 10px;
+            border-radius: 5px;
+            border: solid 2px $borderColor;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            box-shadow: 0 4px 8px 0 $shadowColor, 0 6px 20px 0 $shadowColor;
+            background: $prioridadBaja;
+        }
+
     }
 
     & aside {
@@ -83,8 +200,8 @@ main {
             justify-content: center;
             margin: auto;
             align-items: baseline;
-            
-            & label{
+
+            & label {
                 font-weight: $fontBold;
             }
 
@@ -96,7 +213,9 @@ main {
                 justify-content: center;
                 margin: 0.5vw;
 
-                & input , select, textarea {
+                & input,
+                select,
+                textarea {
                     width: 90%;
                     padding: 5px;
                     border-radius: 5px;
@@ -104,7 +223,8 @@ main {
                     margin-bottom: 10px;
                     resize: none;
                 }
-                & #fileUpdate{
+
+                & #fileUpdate {
                     color: white;
                     background-color: $btnColor;
                     cursor: pointer;
@@ -124,6 +244,38 @@ main {
             border: 2px solid black;
             border-radius: 5px;
             cursor: pointer;
+        }
+    }
+
+    & .showTkt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2vh;
+
+        & .ticket-card {
+            width: 50%;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: red;
+            box-shadow: 0 4px 8px 0 $shadowColor, 0 6px 20px 0 $shadowColor;
+
+            & h1 {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            & p {
+                margin: 5px 0;
+                font-size: $fontSize;
+            }
+
+            & .tktDetail {
+                margin-top: 10px;
+                padding-top: 10px;
+                border-top: 2px solid black;
+            }
         }
     }
 

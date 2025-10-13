@@ -1,0 +1,21 @@
+<main class="showTkt">
+    <article class="ticket-card">
+        <h1>Ticket #<%= ticket.id_ticket %> — <%= ticket.asunto %>
+        </h1>
+        <p><strong>Estado:</strong>
+            <%= ticket.estado %>
+        </p>
+        <p><strong>Prioridad:</strong>
+            <%= ticket.prioridad %>
+        </p>
+        <p><strong>Descripción:</strong></p>
+        <p>
+            <%= ticket.descripcion %>
+        </p>
+    </article>
+
+    <nav class="actions">
+        <a href="/" class="btn">Volver al listado</a>   
+        <!-- Aquí después podés sumar Editar / Cerrar / Eliminar -->
+    </nav>
+</main>

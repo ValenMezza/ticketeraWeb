@@ -45,7 +45,7 @@ header nav ul li:hover {
   color: rgb(77, 75, 75);
 }
 header nav .btnNav {
-  background-color: rgb(196, 196, 196);
+  background-color: rgb(32, 32, 32);
   color: white;
   border: solid black 1px;
   padding: 10px 20px;
@@ -63,29 +63,116 @@ main {
   flex-direction: row;
 }
 main p {
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 16px;
 }
 main section {
   width: 80%;
 }
-main section .cardTicket {
+main section .tktHead {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid black;
+}
+main section .tktTitle {
+  justify-content: start;
   align-items: start;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: baseline;
+}
+main section .tktInfo {
+  max-width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: baseline;
+}
+main section .tktInfo h5 {
+  margin: 1vw;
+}
+main section .tktDesc {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+main section .tktDesc p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+main section .tktDetail {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+main section .tktDetail button {
+  background-color: rgb(32, 32, 32);
+  color: white;
+  border: solid black 1px;
+  padding: 10px 20px;
+  margin: 1%;
+  border-radius: 5px;
+  width: 8vw;
+  min-width: fit-content;
+  margin: 0.5vw;
+  cursor: pointer;
+}
+main section h3 {
+  color: black;
+  font-size: 16px;
+}
+main section p {
+  color: black;
+  font-size: 16px;
+}
+main section .cardTicketalta {
+  width: 100%;
   list-style: none;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   padding: 10px;
   border-radius: 5px;
   border: solid 2px black;
   margin-top: 2%;
   margin-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  box-shadow: 0 4px 8px 0 rgba(63, 63, 63, 0.1), 0 6px 20px 0 rgba(63, 63, 63, 0.1);
+  background: linear-gradient(90deg, #ffffff 99%, #ff0000 100%);
 }
-main section .cardTicket h3 {
-  color: black;
-  font-size: 16px;
+main section .cardTicketmedia {
+  width: 100%;
+  list-style: none;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 2px black;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  box-shadow: 0 4px 8px 0 rgba(63, 63, 63, 0.1), 0 6px 20px 0 rgba(63, 63, 63, 0.1);
+  background: linear-gradient(90deg, #ffffff 99%, #ffea00 100%);
 }
-main section .cardTicket p {
-  color: black;
-  font-size: 16px;
+main section .cardTicketbaja {
+  width: 100%;
+  list-style: none;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 2px black;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  box-shadow: 0 4px 8px 0 rgba(63, 63, 63, 0.1), 0 6px 20px 0 rgba(63, 63, 63, 0.1);
+  background: linear-gradient(90deg, #ffffff 99%, #37ff00 100%);
 }
 main aside {
   width: 20%;
@@ -116,7 +203,7 @@ main #createTkt {
   margin: auto;
   border: 2px solid black;
   border-radius: 5px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 main #createTkt h2 {
   text-align: center;
@@ -140,7 +227,9 @@ main #createTkt form #formDivRight {
   justify-content: center;
   margin: 0.5vw;
 }
-main #createTkt form #formDivLeft input, main #createTkt form #formDivLeft select, main #createTkt form #formDivLeft textarea,
+main #createTkt form #formDivLeft input,
+main #createTkt form #formDivLeft select,
+main #createTkt form #formDivLeft textarea,
 main #createTkt form #formDivRight input,
 main #createTkt form #formDivRight select,
 main #createTkt form #formDivRight textarea {
@@ -154,10 +243,10 @@ main #createTkt form #formDivRight textarea {
 main #createTkt form #formDivLeft #fileUpdate,
 main #createTkt form #formDivRight #fileUpdate {
   color: white;
-  background-color: rgb(196, 196, 196);
+  background-color: rgb(32, 32, 32);
   cursor: pointer;
   width: 25vw;
-  background-color: rgb(196, 196, 196);
+  background-color: rgb(32, 32, 32);
 }
 main #createTkt button {
   color: white;
@@ -165,10 +254,37 @@ main #createTkt button {
   height: 2.5vh;
   margin: auto;
   margin-bottom: 1vh;
-  background-color: rgb(196, 196, 196);
+  background-color: rgb(32, 32, 32);
   border: 2px solid black;
   border-radius: 5px;
   cursor: pointer;
+}
+main .showTkt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+}
+main .showTkt .ticket-card {
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: red;
+  box-shadow: 0 4px 8px 0 rgba(63, 63, 63, 0.1), 0 6px 20px 0 rgba(63, 63, 63, 0.1);
+}
+main .showTkt .ticket-card h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+main .showTkt .ticket-card p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+main .showTkt .ticket-card .tktDetail {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 2px solid black;
 }
 
 body {

@@ -1,9 +1,24 @@
-<form action="/newTicket" method="POST">
+<form id="createTkt" action="/newTicket" method="POST">
     <label>Asunto:</label>
     <input type="text" name="asunto" required><br><br>
 
     <label>Descripción:</label>
     <textarea name="descripcion" required></textarea><br><br>
+    <label>Prioridad:</label>
+    <select name="prioridad" required>
+        <option value="alta">Alta</option>
+        <option value="media">Media</option>
+        <option value="baja">Baja</option>
+        <br>
+        ---
+    </select><br><br>
 
+        <select name="estado" required>
+        <option value="abierto">Abierto</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="cerrado">Cerrado</option>
+
+        </select>
+        --- 
     <button type="submit">Guardar Ticket</button>
 </form>

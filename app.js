@@ -27,6 +27,9 @@ app.get('/contacto', (req, res) => {
 app.get('/ticket/create', ticketController.create);
 app.post('/newTicket', ticketController.store);
 
+//detalle de tickets
+app.get('/ticket/:id', ticketController.show);
+
 //configuracion
 app.get('/configuration', (req, res) => {
     res.render('configuration', { titulo: 'Página de Configuración' });
