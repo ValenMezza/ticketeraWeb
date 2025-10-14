@@ -180,9 +180,10 @@ main {
     }
 
     & #createTkt {
+        font-weight: lighter;
         display: flex;
         flex-direction: column;
-        width: 80%;
+        width: 95%;
         justify-content: center;
         margin: auto;
         border: 2px solid black;
@@ -190,60 +191,96 @@ main {
         background-color: $cardColor;
 
         & h2 {
+            font-weight: lighter;
             text-align: center;
         }
 
-        & form {
-            width: 100%;
+        & #createForm {
+            width: 90%;
             display: flex;
+            flex-wrap: wrap;
             flex-direction: row;
-            justify-content: center;
+            justify-content: safe;
             margin: auto;
             align-items: baseline;
+            font-weight: lighter;
 
-            & label {
-                font-weight: $fontBold;
-            }
-
-            & #formDivLeft,
-            #formDivRight {
-                width: 50%;
+            & #formAsunto {
+                align-items: baseline;
+                width: 100%;
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
-                margin: 0.5vw;
+                flex-wrap: wrap;
+                flex-direction: row;
+                height: fit-content;
 
-                & input,
-                select,
-                textarea {
-                    width: 90%;
-                    padding: 5px;
-                    border-radius: 5px;
-                    border: solid 1px $borderColor;
-                    margin-bottom: 10px;
-                    resize: none;
+                & label {
+                    width: 10%;
                 }
 
-                & #fileUpdate {
-                    color: white;
-                    background-color: $btnColor;
-                    cursor: pointer;
-                    width: 25vw;
-                    background-color: $btnColor;
+                & #inputAsunto {
+                    justify-self: start;
+                    display: block;
+                    width: 70vw;
+                    border-radius: 5px;
                 }
             }
-        }
 
-        & button {
-            color: white;
-            width: 20%;
-            height: 2.5vh;
-            margin: auto;
-            margin-bottom: 1vh;
-            background-color: $btnColor;
-            border: 2px solid black;
-            border-radius: 5px;
-            cursor: pointer;
+            & #formDesc {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                margin-top: 1vh;
+
+                & label {
+                    width: 10%;
+                }
+
+                & #txtAreaDesc {
+                    border-radius: 5px;
+                    width: 70vw;
+                    height: auto;
+                    resize: vertical;
+                    box-sizing: border-box;
+                    font-size: 14px;
+                }
+            }
+
+            & #formSelects {
+                align-items: baseline;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 1vh;
+                
+                & label {
+                    width: fit-content;
+                }
+
+
+                & select {
+                    width: 20vw;
+                    height: fit-content;
+                    border-radius: 5px;
+                    border: 1px solid black;
+                    padding: 5px;
+                }
+            }
+
+
+
+            & button {
+                color: white;
+                width: 20%;
+                height: 2.5vh;
+                margin: auto;
+                margin-bottom: 1vh;
+                background-color: $btnColor;
+                border: 2px solid black;
+                border-radius: 5px;
+                cursor: pointer;
+            }
         }
     }
 

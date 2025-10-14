@@ -196,9 +196,10 @@ main aside ul li {
   margin: 5px 0;
 }
 main #createTkt {
+  font-weight: lighter;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 95%;
   justify-content: center;
   margin: auto;
   border: 2px solid black;
@@ -206,49 +207,73 @@ main #createTkt {
   background-color: #ffffff;
 }
 main #createTkt h2 {
+  font-weight: lighter;
   text-align: center;
 }
-main #createTkt form {
-  width: 100%;
+main #createTkt #createForm {
+  width: 90%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: safe;
   margin: auto;
   align-items: baseline;
+  font-weight: lighter;
 }
-main #createTkt form label {
-  font-weight: bold;
-}
-main #createTkt form #formDivLeft,
-main #createTkt form #formDivRight {
-  width: 50%;
+main #createTkt #createForm #formAsunto {
+  align-items: baseline;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0.5vw;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: fit-content;
 }
-main #createTkt form #formDivLeft input,
-main #createTkt form #formDivLeft select,
-main #createTkt form #formDivLeft textarea,
-main #createTkt form #formDivRight input,
-main #createTkt form #formDivRight select,
-main #createTkt form #formDivRight textarea {
-  width: 90%;
-  padding: 5px;
+main #createTkt #createForm #formAsunto label {
+  width: 10%;
+}
+main #createTkt #createForm #formAsunto #inputAsunto {
+  justify-self: start;
+  display: block;
+  width: 70vw;
   border-radius: 5px;
-  border: solid 1px black;
-  margin-bottom: 10px;
-  resize: none;
 }
-main #createTkt form #formDivLeft #fileUpdate,
-main #createTkt form #formDivRight #fileUpdate {
-  color: white;
-  background-color: rgb(32, 32, 32);
-  cursor: pointer;
-  width: 25vw;
-  background-color: rgb(32, 32, 32);
+main #createTkt #createForm #formDesc {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 1vh;
 }
-main #createTkt button {
+main #createTkt #createForm #formDesc label {
+  width: 10%;
+}
+main #createTkt #createForm #formDesc #txtAreaDesc {
+  border-radius: 5px;
+  width: 70vw;
+  height: auto;
+  resize: vertical;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+main #createTkt #createForm #formSelects {
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1vh;
+}
+main #createTkt #createForm #formSelects label {
+  width: fit-content;
+}
+main #createTkt #createForm #formSelects select {
+  width: 20vw;
+  height: fit-content;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px;
+}
+main #createTkt #createForm button {
   color: white;
   width: 20%;
   height: 2.5vh;

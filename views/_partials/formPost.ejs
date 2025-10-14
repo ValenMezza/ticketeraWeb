@@ -1,24 +1,42 @@
-<form id="createTkt" action="/newTicket" method="POST">
-    <label>Asunto:</label>
-    <input type="text" name="asunto" required><br><br>
+<form id="createForm" action="/newTicket" method="POST">
 
-    <label>Descripción:</label>
-    <textarea name="descripcion" required></textarea><br><br>
-    <label>Prioridad:</label>
-    <select name="prioridad" required>
-        <option value="alta">Alta</option>
-        <option value="media">Media</option>
-        <option value="baja">Baja</option>
-        <br>
-        ---
-    </select><br><br>
+    <div id="formAsunto">
+        <label>Asunto:</label>
+        <input id="inputAsunto" type="text" name="asunto" required><br><br>
+    </div>
 
+    <div id="formDesc">
+        <label>Descripción:</label>
+        <textarea rows="10" id="txtAreaDesc" name="descripcion" required></textarea><br><br>
+
+    </div>
+
+    <div id="formSelects">
+        <label>Prioridad:</label>
+        <select name="prioridad" required>
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+            <br>
+            ---
+        </select><br><br>
+        <label>Estado:</label>
         <select name="estado" required>
-        <option value="abierto">Abierto</option>
-        <option value="pendiente">Pendiente</option>
-        <option value="cerrado">Cerrado</option>
-
+            <option value="abierto">Abierto</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="cerrado">Cerrado</option>
         </select>
-        --- 
+        <!-- <label>Asignado a:</label>
+        <select name="estado" required>
+            <option value="abierto">Mezzavilla Valentino</option>
+            <option value="pendiente">Ferrero Emanuel</option>
+            <option value="cerrado">Delfino Facundo</option>
+        </select> -->
+    </div>
+
+
     <button type="submit">Guardar Ticket</button>
+    <button type="submit">Cancelar</button>
+
+
 </form>

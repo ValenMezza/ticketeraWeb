@@ -48,6 +48,7 @@ const ticketController = {
             );
 
             console.log("Ticket guardado correctamente");
+
             res.redirect('/');
         } catch (err) {
             console.error("Error al guardar ticket:", err);

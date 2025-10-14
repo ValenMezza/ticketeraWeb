@@ -7,7 +7,7 @@ export function createTicket() {
         return;
     }
 
-    // Aquí SOLO escuchamos el click del botón
+    // SOLO escuchamos el click del botón
     btnCreate.addEventListener("click", (e) => {
         e.preventDefault();
 
@@ -23,7 +23,6 @@ export function createTicket() {
             return;
         }
 
-        // Si están completos, creo el ticket
         const nuevoTkt = {
             title,
             description,
@@ -38,7 +37,6 @@ export function createTicket() {
         console.log("Tickets acumulados:", tickets);
         localStorage.setItem("tickets", JSON.stringify(tickets));
         console.log(tickets)
-        // Opcional: limpiar formulario después de agregar
-        // document.querySelector("form").reset();
+
     });
 }
