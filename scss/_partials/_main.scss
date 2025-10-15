@@ -67,7 +67,7 @@ main {
                 padding: 10px 20px;
                 margin: 1%;
                 border-radius: 5px;
-                width: 8vw;
+                width: 5vw;
                 min-width: fit-content;
                 margin: 0.5vw;
                 cursor: pointer;
@@ -180,6 +180,7 @@ main {
     }
 
     & #createTkt {
+
         font-weight: lighter;
         display: flex;
         flex-direction: column;
@@ -200,10 +201,32 @@ main {
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
-            justify-content: safe;
+            justify-content: center;
             margin: auto;
             align-items: baseline;
             font-weight: lighter;
+
+            & #formBtns {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & .btnForm {
+                    background-color: rgb(255, 0, 0);
+                    color: white;
+                    border: solid black 1px;
+                    margin: 1%;
+                    border-radius: 5px;
+                    width: 8vw;
+                    height: auto;
+                    min-width: fit-content;
+                    margin: 0.5vw;
+                    cursor: pointer;
+                }
+            }
+
+
 
             & #formAsunto {
                 align-items: baseline;
@@ -212,6 +235,7 @@ main {
                 flex-wrap: wrap;
                 flex-direction: row;
                 height: fit-content;
+
 
                 & label {
                     width: 10%;
@@ -222,6 +246,9 @@ main {
                     display: block;
                     width: 70vw;
                     border-radius: 5px;
+                    border: 2px solid black;
+                    box-sizing: border-box;
+
                 }
             }
 
@@ -242,6 +269,7 @@ main {
                     height: auto;
                     resize: vertical;
                     box-sizing: border-box;
+                    border: 2px solid black;
                     font-size: 14px;
                 }
             }
@@ -251,20 +279,29 @@ main {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                width: 100%;
+                width: 70%;
                 margin-top: 1vh;
-                
+
                 & label {
                     width: fit-content;
                 }
 
 
                 & select {
-                    width: 20vw;
+                    width: 15vw;
                     height: fit-content;
                     border-radius: 5px;
-                    border: 1px solid black;
+                    border: 2px solid black;
                     padding: 5px;
+
+                    & option {
+                        font-size: 14px;
+                        padding: 5px;
+                        box-sizing: border-box;
+                        border-radius: 5px;
+                        background-color: rgb(226, 226, 226);
+
+                    }
                 }
             }
 
@@ -285,22 +322,26 @@ main {
     }
 
     & .showTkt {
+        width: 100vw;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 2vh;
+        margin: auto;
 
         & .ticket-card {
-            width: 50%;
+            width: 90%;
             border: 2px solid black;
             border-radius: 5px;
             padding: 10px;
-            background-color: red;
+            background-color: $cardColor;
             box-shadow: 0 4px 8px 0 $shadowColor, 0 6px 20px 0 $shadowColor;
 
             & h1 {
-                text-align: center;
+                text-align: start;
                 margin-bottom: 10px;
+                font-size: 1.5rem;
+                border-bottom: 2px solid black;
             }
 
             & p {
@@ -313,7 +354,53 @@ main {
                 padding-top: 10px;
                 border-top: 2px solid black;
             }
+            & .btnCard{
+                border-top: 2px solid black;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
         }
     }
 
+    & button {
+        background-color: $btnColor;
+        color: white;
+        border: solid black 1px;
+        padding: 10px 20px;
+        margin: 1%;
+        border-radius: 5px;
+        width: 8vw;
+        min-width: fit-content;
+        margin: 0.5vw;
+        cursor: pointer;
+    }
+
+    & .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        gap: 10px;
+
+        & .pageTkt {
+            background-color: rgb(32, 32, 32);
+            color: white;
+            border: solid black 1px;
+            padding: 10px 20px;
+            margin: 1%;
+            border-radius: 5px;
+            width: 2vw;
+            min-width: fit-content;
+            margin: 0.5vw;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        & .pageTkt:hover {
+            background-color: $btnHover;
+        }
+    }
 }

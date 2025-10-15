@@ -1,21 +1,27 @@
 <main class="showTkt">
-    <article class="ticket-card">
-        <h1>Ticket #<%= ticket.id_ticket %> — <%= ticket.asunto %>
+    <section class="ticket-card">
+        <h1>#<%= ticket.id_ticket %> | <%= ticket.asunto %>
         </h1>
-        <p><strong>Estado:</strong>
-            <%= ticket.estado %>
-        </p>
-        <p><strong>Prioridad:</strong>
-            <%= ticket.prioridad %>
-        </p>
-        <p><strong>Descripción:</strong></p>
-        <p>
-            <%= ticket.descripcion %>
-        </p>
-    </article>
+        <p><strong>Creado el:</strong>
+            <%= ticket.fecha_creacion.toLocaleDateString() %> a las
+                <%= ticket.fecha_creacion.toLocaleTimeString() %>
+                    <p><strong>Estado:</strong>
+                        <%= ticket.estado %>
+                    </p>
+                    <p><strong>Prioridad:</strong>
+                        <%= ticket.prioridad %>
+                    </p>
+                    <p><strong>Descripción: </strong>
+                        <%= ticket.descripcion %>
+                    </p>
+                    <div class="btnCard">
+                        <button type="submit">Imprimir</button>
+                        <button type="submit"> <a href="/ticket/edit/<%= ticket.id_ticket %>">Editar</a></button>
+                        <button type="submit">Eliminar</button>
+                    </div>
 
-    <nav class="actions">
-        <a href="/" class="btn">Volver al listado</a>   
-        <!-- Aquí después podés sumar Editar / Cerrar / Eliminar -->
-    </nav>
+
+    </section>
+
+
 </main>

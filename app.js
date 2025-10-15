@@ -27,8 +27,12 @@ app.get('/contacto', (req, res) => {
 app.get('/ticket/create', ticketController.create);
 app.post('/newTicket', ticketController.store);
 
-//detalle de tickets
+//detalle de ticket
 app.get('/ticket/:id', ticketController.show);
+
+//edición de ticket
+app.get('/ticket/edit/:id', (ticketController.edit));
+//app.post('/ticket/update/:id', (ticketController.update));
 
 //configuracion
 app.get('/configuration', (req, res) => {
